@@ -1,9 +1,371 @@
-<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Christopher ❤️ Rhoda</title><link rel="stylesheet" href="style.css"></head><body>
-<div id="intro"><div class="intro-content"><h1>❤️ Happy Girlfriend's Day ❤️</h1><h2>Christopher ❤️ Rhoda</h2><p>Every love story is beautiful, but ours is my favorite.</p><button id="startBtn">Start Our Story ❤️</button></div></div>
-<div class="hearts"></div>
-<section class="hero"><h1>Happy Girlfriend's Day ❤️</h1><h2>Christopher ❤️ Rhoda</h2><p>Replace this text with your own message.</p><button id="loveBtn">Open My Heart ❤️</button></section>
-<audio id="bgMusic" loop><source src="music.mp3" type="audio/mpeg"></audio>
-<section class="gallery"><h2>Our Memories 📸</h2><div class="gallery-container">
-<img src="images/photo1.jpg"><img src="images/photo2.jpg"><img src="images/photo3.jpg"><img src="images/photo4.jpg"><img src="images/photo5.jpg"><img src="images/photo6.jpg">
-</div></section>
-<script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Girlfriend's Day ❤️ | Chris & Mercy</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- ================= Floating Hearts ================= -->
+
+<div id="hearts-container"></div>
+
+<!-- ================= Navigation ================= -->
+
+<nav>
+
+    <div class="logo">
+        ❤️ Chercy
+    </div>
+
+    <ul>
+
+        <li><a href="#home">Home</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#letter">Love Letter</a></li>
+
+    </ul>
+
+</nav>
+
+<!-- ================= HERO ================= -->
+
+<section id="home" class="hero">
+
+<div class="hero-content">
+
+<h1>
+Happy Girlfriend's Day
+</h1>
+
+<h2>
+My Beautiful Chercy ❤️
+</h2>
+
+<p id="typing"></p>
+
+<button id="heartBtn">
+
+Open My Heart ❤️
+
+</button>
+
+</div>
+
+</section>
+
+<!-- ================= Love Counter ================= -->
+
+<section class="counter">
+
+<h2>We've Been Creating Beautiful Memories</h2>
+
+<div id="loveTimer"></div>
+
+</section>
+
+<!-- ================= OUR STORY ================= -->
+
+<section id="story">
+
+<h1 class="title">
+
+Our Story ❤️
+
+</h1>
+
+<div class="timeline">
+
+<div class="card">
+
+<h2>🌹 The Beginning</h2>
+
+<p>
+
+The day I met you, my life changed forever.
+You brought happiness, peace, and endless smiles into my world.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>💖 Every Conversation</h2>
+
+<p>
+
+Every message from you brightens my day.
+Every call makes my heart race.
+
+</p>
+
+</div>
+
+<div class="card">
+
+<h2>🌍 Our Future</h2>
+
+<p>
+
+I dream of building a beautiful future together,
+filled with love, adventures, laughter, and endless happiness.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Reasons ================= -->
+
+<section class="reasons">
+
+<h1 class="title">
+
+1000 Reasons Why I Love You ❤️
+
+</h1>
+
+<div class="cards">
+
+<div class="reason-card">
+
+<i class="fa-solid fa-heart"></i>
+
+<h3>Your Smile</h3>
+
+<p>
+
+Your smile lights up my darkest days.
+
+</p>
+
+</div>
+
+<div class="reason-card">
+
+<i class="fa-solid fa-star"></i>
+
+<h3>Your Kind Heart</h3>
+
+<p>
+
+You care deeply for people, and that's one of the many reasons I admire you.
+
+</p>
+
+</div>
+
+<div class="reason-card">
+
+<i class="fa-solid fa-face-smile"></i>
+
+<h3>You Make Me Happy</h3>
+
+<p>
+
+Every moment with you becomes a memory I'll cherish forever.
+
+</p>
+
+</div>
+
+<div class="reason-card">
+
+<i class="fa-solid fa-crown"></i>
+
+<h3>You're My Queen</h3>
+
+<p>
+
+To me, you'll always be the most beautiful woman in the world.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= Gallery ================= -->
+
+<section id="gallery">
+
+<h1 class="title">
+
+Our Beautiful Memories 📸
+
+</h1>
+
+<div class="gallery">
+
+<img src="images/photo1.jpg">
+
+<img src="images/photo2.jpg">
+
+<img src="images/photo3.jpg">
+
+<img src="images/photo4.jpg">
+
+<img src="images/photo5.jpg">
+
+<img src="images/photo6.jpg">
+
+</div>
+
+</section>
+
+<!-- ================= LOVE LETTER ================= -->
+
+<section id="letter">
+
+<h1 class="title">
+
+A Letter To My Love 💌
+
+</h1>
+
+<div class="love-letter">
+
+<p>
+
+Dear Mercy,
+
+Sometimes words aren't enough to explain how much you mean to me.
+
+You've become my happiness, my peace, my safe place, and the greatest blessing in my life.
+
+Every day I thank God for bringing you into my world.
+
+Thank you for loving me,
+supporting me,
+believing in me,
+and making life worth smiling for.
+
+On this Girlfriend's Day, I simply want you to know that...
+
+I LOVE YOU MORE THAN WORDS CAN EVER DESCRIBE.
+
+Forever Yours,
+
+❤️ Chris
+
+</p>
+
+</div>
+
+</section>
+
+<!-- ================= Surprise ================= -->
+
+<section class="surprise">
+
+<h1>
+
+One Last Surprise...
+
+</h1>
+
+<button id="surpriseBtn">
+
+Click Me ❤️
+
+</button>
+
+</section>
+
+<!-- ================= Hidden Modal ================= -->
+
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<h1>
+
+I Love You Mercy ❤️
+
+</h1>
+
+<p>
+
+No matter where life takes us,
+
+I'll always choose you.
+
+Today...
+
+Tomorrow...
+
+Forever.
+
+</p>
+
+<button id="closeModal">
+
+Close
+
+</button>
+
+</div>
+
+</div>
+
+<!-- ================= Music ================= -->
+
+<div class="music-player">
+
+<button id="musicBtn">
+
+🎵 Play Music
+
+</button>
+
+<audio id="bgMusic" loop>
+
+<source src="music/love.mp3" type="audio/mp3">
+
+</audio>
+
+</div>
+
+<!-- ================= Footer ================= -->
+
+<footer>
+
+Made with ❤️ by Chris
+
+for
+
+My Beautiful Chercy
+
+Happy Girlfriend's Day ❤️
+
+</footer>
+
+<!-- Fireworks Canvas -->
+
+<canvas id="fireworks"></canvas>
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
