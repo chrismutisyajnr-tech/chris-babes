@@ -1,0 +1,1 @@
+const m=document.getElementById('bgMusic');document.getElementById('startBtn').onclick=()=>{m.play();intro.style.display='none'};document.getElementById('loveBtn').onclick=()=>m.play();
