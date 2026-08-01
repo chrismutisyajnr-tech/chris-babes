@@ -1,47 +1,94 @@
-// ===========================================
-// Typewriter Effect
-// ===========================================
+/*====================================================
+        CHRIS ❤️ FAITH (FAY)
+        SCRIPT.JS - PART 1
+====================================================*/
 
-const message =
-"Mercy ❤️, you are the best thing that has ever happened to me. Every heartbeat reminds me how lucky I am to have you. Happy Girlfriend's Day, my beautiful Chercy. I love you today, tomorrow, forever, and always.";
 
-let index = 0;
+/*=========================================
+Loading Screen
+=========================================*/
 
-function typeWriter() {
+window.addEventListener("load", () => {
 
-    if (index < message.length) {
+    const loader = document.getElementById("loader");
 
-        document.getElementById("typing").innerHTML += message.charAt(index);
+    document.body.classList.add("loaded");
 
-        index++;
+    setTimeout(() => {
 
-        setTimeout(typeWriter, 45);
+        loader.style.display = "none";
+
+    },1000);
+
+});
+
+
+/*=========================================
+Typewriter Effect
+=========================================*/
+
+const text = `My Dearest Faith ❤️,
+
+Happy Girlfriend's Day.
+
+You are my happiness,
+my peace,
+my best friend,
+and my greatest blessing.
+
+Thank you for loving me.
+
+Thank you for believing in me.
+
+Thank you for choosing me.
+
+I promise to keep loving you,
+respecting you,
+supporting you,
+and making you smile every day.
+
+You will always have my heart.
+
+Forever Yours,
+
+Chris ❤️`;
+
+const typing = document.getElementById("typing");
+
+let i = 0;
+
+function typeWriter(){
+
+    if(i < text.length){
+
+        typing.innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(typeWriter,40);
 
     }
 
 }
 
-window.onload = () => {
+typeWriter();
 
-    typeWriter();
 
-};
 
-// ===========================================
-// Love Timer
-// Change this date to the day you became
-// a couple.
-// ===========================================
+/*=========================================
+Love Timer
+Change this date to your anniversary
+=========================================*/
 
-const startDate = new Date("2025-01-01T00:00:00");
+const anniversary = new Date("2025-01-01T00:00:00");
 
-function updateTimer(){
+function updateLoveTimer(){
 
     const now = new Date();
 
-    const difference = now - startDate;
+    const difference = now - anniversary;
 
-    const days = Math.floor(difference / (1000*60*60*24));
+    const days = Math.floor(difference/(1000*60*60*24));
 
     const hours = Math.floor((difference/(1000*60*60))%24);
 
@@ -49,35 +96,92 @@ function updateTimer(){
 
     const seconds = Math.floor((difference/1000)%60);
 
-    document.getElementById("loveTimer").innerHTML=
+    document.getElementById("loveTimer").innerHTML =
 
     `${days} Days ❤️ ${hours} Hours ❤️ ${minutes} Minutes ❤️ ${seconds} Seconds`;
 
 }
 
-setInterval(updateTimer,1000);
+setInterval(updateLoveTimer,1000);
 
-updateTimer();
+updateLoveTimer();
 
-// ===========================================
-// Floating Hearts
-// ===========================================
 
-const heartsContainer=document.getElementById("hearts-container");
+
+/*=========================================
+Music
+=========================================*/
+
+const music = document.getElementById("bgMusic");
+
+const musicBtn = document.getElementById("musicBtn");
+
+let playing = false;
+
+musicBtn.onclick = function(){
+
+    if(!playing){
+
+        music.play();
+
+        musicBtn.innerHTML = "⏸ Pause Music";
+
+        playing = true;
+
+    }
+
+    else{
+
+        music.pause();
+
+        musicBtn.innerHTML = "🎵 Play Music";
+
+        playing = false;
+
+    }
+
+};
+
+
+
+/*=========================================
+Explore Button
+=========================================*/
+
+document.getElementById("exploreBtn").onclick=function(){
+
+document.getElementById("story").scrollIntoView({
+
+behavior"smooth"
+
+});
+
+};
+/*====================================================
+        CHRIS ❤️ FAITH (FAY)
+        SCRIPT.JS - PART 2
+====================================================*/
+
+
+/*=========================================
+Floating Hearts
+=========================================*/
+
+const heartsContainer = document.getElementById("hearts");
 
 function createHeart(){
 
-    const heart=document.createElement("div");
+    const heart = document.createElement("div");
 
-    heart.classList.add("heart");
+    heart.className = "heart";
 
-    heart.innerHTML="❤️";
+    heart.innerHTML = "❤️";
 
-    heart.style.left=Math.random()*100+"vw";
+    heart.style.left = Math.random()*100 + "%";
 
-    heart.style.fontSize=(15+Math.random()*30)+"px";
+    heart.style.fontSize = (15 + Math.random()*30) + "px";
 
-    heart.style.animationDuration=(5+Math.random()*6)+"s";
+    heart.style.animationDuration = (6 + Math.random()*5) + "s";
 
     heartsContainer.appendChild(heart);
 
@@ -89,45 +193,71 @@ function createHeart(){
 
 }
 
-setInterval(createHeart,300);
+setInterval(createHeart,400);
 
-// ===========================================
-// Background Music
-// ===========================================
 
-const music=document.getElementById("bgMusic");
 
-const musicBtn=document.getElementById("musicBtn");
+/*=========================================
+Falling Rose Petals
+=========================================*/
 
-let playing=false;
+const petalsContainer = document.getElementById("petals");
 
-musicBtn.onclick=function(){
+function createPetal(){
 
-    if(!playing){
+    const petal = document.createElement("div");
 
-        music.play();
+    petal.className = "petal";
 
-        playing=true;
+    petal.innerHTML = "🌹";
 
-        musicBtn.innerHTML="⏸ Pause Music";
+    petal.style.left = Math.random()*100 + "%";
 
-    }
+    petal.style.fontSize = (18 + Math.random()*20) + "px";
 
-    else{
+    petal.style.animationDuration = (8 + Math.random()*5) + "s";
 
-        music.pause();
+    petalsContainer.appendChild(petal);
 
-        playing=false;
+    setTimeout(()=>{
 
-        musicBtn.innerHTML="🎵 Play Music";
+        petal.remove();
 
-    }
+    },13000);
 
 }
 
-// ===========================================
-// Surprise Modal
-// ===========================================
+setInterval(createPetal,1200);
+
+
+
+/*=========================================
+Twinkling Stars
+=========================================*/
+
+const starsContainer = document.getElementById("stars");
+
+for(let i=0;i<120;i++){
+
+    const star = document.createElement("div");
+
+    star.className="star";
+
+    star.style.left=Math.random()*100+"%";
+
+    star.style.top=Math.random()*100+"%";
+
+    star.style.animationDelay=Math.random()*3+"s";
+
+    starsContainer.appendChild(star);
+
+}
+
+
+
+/*=========================================
+Surprise Modal
+=========================================*/
 
 const modal=document.getElementById("modal");
 
@@ -139,8 +269,6 @@ surpriseBtn.onclick=function(){
 
     modal.style.display="flex";
 
-    startFireworks();
-
 }
 
 closeModal.onclick=function(){
@@ -151,153 +279,116 @@ closeModal.onclick=function(){
 
 window.onclick=function(e){
 
-    if(e.target==modal){
+    if(e.target===modal){
 
         modal.style.display="none";
 
     }
 
+};
+
+
+
+/*=========================================
+Fade In While Scrolling
+=========================================*/
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
 }
-
-// ===========================================
-// Hero Button
-// ===========================================
-
-document.getElementById("heartBtn").onclick=function(){
-
-    document.getElementById("letter").scrollIntoView({
-
-        behavior:"smooth"
-
-    });
-
-}
-
-// ===========================================
-// Gallery Image Preview
-// ===========================================
-
-const images=document.querySelectorAll(".gallery img");
-
-images.forEach(img=>{
-
-    img.addEventListener("click",()=>{
-
-        const overlay=document.createElement("div");
-
-        overlay.style.position="fixed";
-
-        overlay.style.left="0";
-
-        overlay.style.top="0";
-
-        overlay.style.width="100%";
-
-        overlay.style.height="100%";
-
-        overlay.style.background="rgba(0,0,0,.9)";
-
-        overlay.style.display="flex";
-
-        overlay.style.justifyContent="center";
-
-        overlay.style.alignItems="center";
-
-        overlay.style.zIndex="10000";
-
-        const image=document.createElement("img");
-
-        image.src=img.src;
-
-        image.style.maxWidth="90%";
-
-        image.style.maxHeight="90%";
-
-        image.style.borderRadius="20px";
-
-        overlay.appendChild(image);
-
-        overlay.onclick=()=>overlay.remove();
-
-        document.body.appendChild(overlay);
-
-    });
 
 });
 
-// ===========================================
-// Fireworks
-// ===========================================
+});
 
-const canvas=document.getElementById("fireworks");
+document.querySelectorAll(
 
-const ctx=canvas.getContext("2d");
+".story-card,.reason-card,.gallery-item,.love-letter"
 
-canvas.width=window.innerWidth;
+).forEach(item=>{
 
-canvas.height=window.innerHeight;
+item.classList.add("fade");
 
-window.addEventListener("resize",()=>{
-
-    canvas.width=window.innerWidth;
-
-    canvas.height=window.innerHeight;
+observer.observe(item);
 
 });
 
-let particles=[];
 
-function Particle(x,y){
 
-    this.x=x;
+/*=========================================
+Gallery Click Animation
+=========================================*/
 
-    this.y=y;
+document.querySelectorAll(".gallery-item img").forEach(image=>{
 
-    this.radius=Math.random()*3+2;
+image.addEventListener("click",()=>{
 
-    this.dx=(Math.random()-0.5)*8;
+image.style.transform="scale(1.2)";
 
-    this.dy=(Math.random()-0.5)*8;
+setTimeout(()=>{
 
-    this.life=100;
+image.style.transform="scale(1)";
+
+},500);
+
+});
+
+});
+/*====================================================
+        CHRIS ❤️ FAITH (FAY)
+        SCRIPT.JS - PART 3
+====================================================*/
+
+
+/*=========================================
+Fireworks
+=========================================*/
+
+const canvas = document.getElementById("fireworks");
+const ctx = canvas.getContext("2d");
+
+function resizeCanvas(){
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
 }
 
-Particle.prototype.update=function(){
+resizeCanvas();
 
-    this.x+=this.dx;
+window.addEventListener("resize", resizeCanvas);
 
-    this.y+=this.dy;
+const particles = [];
 
-    this.life--;
+function launchFirework(){
 
-}
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height * 0.6;
 
-Particle.prototype.draw=function(){
+    for(let i=0;i<45;i++){
 
-    ctx.beginPath();
+        particles.push({
 
-    ctx.arc(this.x,this.y,this.radius,0,Math.PI*2);
+            x:x,
+            y:y,
 
-    ctx.fillStyle=`hsl(${Math.random()*360},100%,70%)`;
+            radius:2 + Math.random()*2,
 
-    ctx.fill();
+            angle:Math.random()*Math.PI*2,
 
-}
+            speed:2 + Math.random()*4,
 
-function startFireworks(){
+            alpha:1,
 
-    particles=[];
+            color:`hsl(${Math.random()*360},100%,70%)`
 
-    for(let i=0;i<250;i++){
-
-        particles.push(new Particle(
-
-            canvas.width/2,
-
-            canvas.height/2
-
-        ));
+        });
 
     }
 
@@ -307,13 +398,35 @@ function animateFireworks(){
 
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
-    particles.forEach((p,index)=>{
+    particles.forEach((particle,index)=>{
 
-        p.update();
+        particle.x += Math.cos(particle.angle)*particle.speed;
 
-        p.draw();
+        particle.y += Math.sin(particle.angle)*particle.speed;
 
-        if(p.life<=0){
+        particle.alpha -= 0.015;
+
+        ctx.beginPath();
+
+        ctx.arc(
+
+            particle.x,
+
+            particle.y,
+
+            particle.radius,
+
+            0,
+
+            Math.PI*2
+
+        );
+
+        ctx.fillStyle = particle.color.replace("hsl","hsla").replace(")",`,`+particle.alpha+")");
+
+        ctx.fill();
+
+        if(particle.alpha <= 0){
 
             particles.splice(index,1);
 
@@ -327,95 +440,122 @@ function animateFireworks(){
 
 animateFireworks();
 
-// ===========================================
-// Falling Rose Petals
-// ===========================================
+setInterval(launchFirework,2500);
 
-function createPetal(){
 
-    const petal=document.createElement("div");
 
-    petal.innerHTML="🌹";
+/*=========================================
+Heart Burst
+=========================================*/
 
-    petal.style.position="fixed";
+function heartBurst(){
 
-    petal.style.left=Math.random()*100+"vw";
+    for(let i=0;i<20;i++){
 
-    petal.style.top="-50px";
+        const heart=document.createElement("div");
 
-    petal.style.fontSize=(20+Math.random()*15)+"px";
+        heart.innerHTML="❤️";
 
-    petal.style.zIndex="999";
+        heart.style.position="fixed";
 
-    petal.style.pointerEvents="none";
+        heart.style.left=(45+Math.random()*10)+"%";
 
-    petal.style.transition="transform 10s linear";
+        heart.style.top=(45+Math.random()*10)+"%";
 
-    document.body.appendChild(petal);
+        heart.style.fontSize=(20+Math.random()*25)+"px";
 
-    setTimeout(()=>{
+        heart.style.pointerEvents="none";
 
-        petal.style.transform=`translateY(${window.innerHeight+100}px)
-        rotate(${720*Math.random()}deg)`;
+        heart.style.zIndex="100000";
 
-    },100);
+        heart.style.transition="all 2s ease";
 
-    setTimeout(()=>{
+        document.body.appendChild(heart);
 
-        petal.remove();
+        setTimeout(()=>{
 
-    },10000);
+            heart.style.transform=
+            `translate(${(Math.random()-0.5)*400}px,
+            ${-200-Math.random()*300}px)
+            scale(0.5)`;
+
+            heart.style.opacity="0";
+
+        },20);
+
+        setTimeout(()=>{
+
+            heart.remove();
+
+        },2200);
+
+    }
 
 }
 
-setInterval(createPetal,1500);
 
-// ===========================================
-// Smooth Fade-In Sections
-// ===========================================
 
-const sections=document.querySelectorAll("section");
+/*=========================================
+Open Modal Fireworks
+=========================================*/
 
-const observer=new IntersectionObserver(entries=>{
+surpriseBtn.addEventListener("click",()=>{
 
-    entries.forEach(entry=>{
+    launchFirework();
 
-        if(entry.isIntersecting){
+    launchFirework();
 
-            entry.target.style.opacity="1";
+    launchFirework();
 
-            entry.target.style.transform="translateY(0)";
+    heartBurst();
 
-        }
+});
+
+
+
+/*=========================================
+Smooth Button Click Animation
+=========================================*/
+
+document.querySelectorAll("button").forEach(button=>{
+
+    button.addEventListener("click",()=>{
+
+        button.style.transform="scale(.95)";
+
+        setTimeout(()=>{
+
+            button.style.transform="";
+
+        },120);
 
     });
 
 });
 
-sections.forEach(section=>{
 
-    section.style.opacity="0";
 
-    section.style.transform="translateY(80px)";
+/*=========================================
+Welcome Message
+=========================================*/
 
-    section.style.transition="1s";
+setTimeout(()=>{
 
-    observer.observe(section);
+    console.log(
 
-});
+`❤️
+Welcome Faith!
 
-// ===========================================
-// Console Message
-// ===========================================
+This website was lovingly created by Chris.
 
-console.log(`
-❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
+Happy Girlfriend's Day!
 
-Happy Girlfriend's Day Mercy!
+❤️`);
 
-From Chris ❤️
+},1500);
 
-Forever Yours.
 
-❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️❤️
-`);
+
+/*=========================================
+End of Script
+=========================================*/
