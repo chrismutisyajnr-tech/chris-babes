@@ -1,32 +1,49 @@
-/* ===========================
-   Google Font
-=========================== */
+/* ==========================================
+   CHRIS ❤️ FAITH (FAY)
+   STYLE.CSS - PART 1
+========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap');
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap');
 
 /* ===========================
-   Reset
+   RESET
 =========================== */
 
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
+}
+
+html{
     scroll-behavior:smooth;
 }
 
 body{
+
     font-family:'Poppins',sans-serif;
-    overflow-x:hidden;
-    background:linear-gradient(135deg,#ff758c,#ff7eb3,#ff9a9e);
-    background-size:400% 400%;
-    animation:bgMove 12s ease infinite;
+
     color:#fff;
+
+    overflow-x:hidden;
+
+    background:linear-gradient(-45deg,
+    #ff4d6d,
+    #ff758f,
+    #ff8fa3,
+    #ffc2d1,
+    #ff4d6d);
+
+    background-size:400% 400%;
+
+    animation:gradient 15s ease infinite;
+
 }
 
 /* Animated Background */
 
-@keyframes bgMove{
+@keyframes gradient{
 
     0%{
         background-position:0% 50%;
@@ -42,104 +59,209 @@ body{
 
 }
 
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#ffd6df;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#ff4d6d;
+
+    border-radius:20px;
+
+}
+
 /* ===========================
-   Floating Hearts
+   LOADER
 =========================== */
 
-#hearts-container{
+#loader{
+
     position:fixed;
-    inset:0;
-    overflow:hidden;
-    pointer-events:none;
-    z-index:-1;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:#ff4d6d;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:99999;
+
+    transition:1s;
+
 }
 
-.heart{
-    position:absolute;
-    color:rgba(255,255,255,.25);
-    animation:floatHeart linear forwards;
+.loader-content{
+
+    text-align:center;
+
 }
 
-@keyframes floatHeart{
+.loader-heart{
 
-    from{
-        transform:translateY(100vh) scale(.5);
-        opacity:0;
+    font-size:80px;
+
+    animation:pulse 1s infinite;
+
+}
+
+.loader-content h1{
+
+    margin-top:15px;
+
+    font-size:42px;
+
+    font-family:'Great Vibes',cursive;
+
+}
+
+.loader-content p{
+
+    margin-top:10px;
+
+    font-size:20px;
+
+}
+
+@keyframes pulse{
+
+    0%{
+        transform:scale(1);
     }
 
-    20%{
-        opacity:1;
+    50%{
+        transform:scale(1.3);
     }
 
-    to{
-        transform:translateY(-120px) scale(1.5);
-        opacity:0;
+    100%{
+        transform:scale(1);
     }
 
 }
 
 /* ===========================
-   Navigation
+   BACKGROUND CONTAINERS
+=========================== */
+
+#hearts,
+#petals,
+#stars{
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:-1;
+
+}
+
+/* ===========================
+   NAVIGATION
 =========================== */
 
 nav{
 
-    width:100%;
     position:fixed;
+
     top:0;
+
     left:0;
-    z-index:1000;
+
+    width:100%;
+
+    padding:18px 8%;
 
     display:flex;
-    justify-content:space-between;
-    align-items:center;
 
-    padding:20px 8%;
+    justify-content:space-between;
+
+    align-items:center;
 
     backdrop-filter:blur(15px);
 
     background:rgba(255,255,255,.15);
 
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+    z-index:1000;
+
 }
 
 .logo{
 
+    font-size:38px;
+
     font-family:'Great Vibes',cursive;
-    font-size:36px;
-    color:white;
+
+    font-weight:bold;
 
 }
 
 nav ul{
 
     display:flex;
-    list-style:none;
+
     gap:30px;
+
+    list-style:none;
 
 }
 
-nav a{
+nav ul li a{
 
     color:white;
+
     text-decoration:none;
+
     font-weight:600;
+
     transition:.4s;
 
 }
 
-nav a:hover{
+nav ul li a:hover{
 
-    color:#ffe3ea;
+    color:#fff5f7;
 
 }
 
 /* ===========================
-   Hero
+   HERO SECTION
 =========================== */
 
 .hero{
 
-    height:100vh;
+    min-height:100vh;
 
     display:flex;
 
@@ -149,21 +271,47 @@ nav a:hover{
 
     text-align:center;
 
-    padding:20px;
+    padding:120px 20px;
 
 }
 
 .hero-content{
 
-    max-width:800px;
+    max-width:900px;
+
+    background:rgba(255,255,255,.12);
+
+    backdrop-filter:blur(18px);
+
+    padding:60px;
+
+    border-radius:30px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
+
+}
+
+.hero h3{
+
+    font-size:28px;
+
+    letter-spacing:2px;
 
 }
 
 .hero h1{
 
+    font-size:90px;
+
+    margin-top:15px;
+
     font-family:'Great Vibes',cursive;
 
-    font-size:80px;
+}
+
+.hero span{
+
+    color:#fff0f5;
 
 }
 
@@ -171,25 +319,41 @@ nav a:hover{
 
     margin-top:10px;
 
-    font-size:35px;
+    font-size:42px;
 
 }
 
 .hero p{
 
-    margin:30px 0;
+    margin:35px auto;
+
+    max-width:700px;
+
+    line-height:1.8;
 
     font-size:22px;
 
-    line-height:1.8;
+    min-height:90px;
 
 }
 
 /* ===========================
-   Buttons
+   BUTTONS
 =========================== */
 
-button{
+.hero-buttons{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.hero-buttons button{
 
     padding:18px 40px;
 
@@ -197,34 +361,34 @@ button{
 
     border-radius:50px;
 
-    cursor:pointer;
-
-    font-size:18px;
-
-    font-weight:bold;
-
     background:white;
 
     color:#ff4d6d;
 
+    font-size:18px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
     transition:.4s;
 
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
 
 }
 
-button:hover{
+.hero-buttons button:hover{
 
-    transform:translateY(-5px) scale(1.05);
-
-    background:#ff4d6d;
+    background:#ff1744;
 
     color:white;
+
+    transform:translateY(-8px);
 
 }
 
 /* ===========================
-   Sections
+   SECTION
 =========================== */
 
 section{
@@ -233,109 +397,121 @@ section{
 
 }
 
-.title{
-
-    font-size:60px;
+.section-title{
 
     text-align:center;
 
-    margin-bottom:60px;
+    font-size:65px;
+
+    margin-bottom:20px;
 
     font-family:'Great Vibes',cursive;
 
 }
 
 /* ===========================
-   Counter
+   LOVE COUNTER
 =========================== */
 
-.counter{
+.love-counter{
 
     text-align:center;
 
 }
 
+.love-counter h2{
+
+    font-size:36px;
+
+    margin-bottom:25px;
+
+}
+
 #loveTimer{
 
-    margin-top:30px;
-
-    font-size:35px;
+    font-size:40px;
 
     font-weight:bold;
 
 }
 
 /* ===========================
-   Timeline
+   STORY CARDS
 =========================== */
 
-.timeline{
+.story-container{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 
     gap:30px;
 
+    margin-top:50px;
+
 }
 
-.card{
+.story-card{
 
-    background:rgba(255,255,255,.15);
+    background:rgba(255,255,255,.12);
 
-    backdrop-filter:blur(15px);
+    backdrop-filter:blur(20px);
 
-    border-radius:20px;
+    padding:35px;
 
-    padding:30px;
+    border-radius:25px;
+
+    text-align:center;
 
     transition:.4s;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.2);
-
 }
 
-.card:hover{
+.story-card:hover{
 
     transform:translateY(-10px);
 
 }
 
-.card h2{
+.story-card i{
+
+    font-size:42px;
+
+    margin-bottom:20px;
+
+}
+
+.story-card h2{
 
     margin-bottom:15px;
 
 }
 
-.card p{
-
-    line-height:1.8;
-
-}
-
 /* ===========================
-   Reasons
+   REASONS
 =========================== */
 
-.cards{
+.reason-container{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 
-    gap:30px;
+    gap:25px;
+
+    margin-top:50px;
 
 }
 
 .reason-card{
 
-    background:rgba(255,255,255,.18);
+    background:rgba(255,255,255,.12);
 
-    backdrop-filter:blur(12px);
+    backdrop-filter:blur(20px);
+
+    padding:30px;
 
     border-radius:20px;
-
-    padding:35px;
 
     text-align:center;
 
@@ -351,86 +527,169 @@ section{
 
 .reason-card i{
 
-    font-size:50px;
-
-    margin-bottom:20px;
-
-    color:#fff;
-
-}
-
-.reason-card h3{
+    font-size:38px;
 
     margin-bottom:15px;
 
 }
 
+.reason-card h3{
+
+    margin-bottom:10px;
+
+}
+/* ==========================================
+   CHRIS ❤️ FAITH (FAY)
+   STYLE.CSS - PART 2
+========================================== */
+
+
 /* ===========================
-   Gallery
+   GALLERY
 =========================== */
+
+#gallery{
+
+    text-align:center;
+
+}
+
+.gallery-subtitle{
+
+    text-align:center;
+
+    font-size:20px;
+
+    margin-bottom:50px;
+
+}
 
 .gallery{
 
     display:grid;
 
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 
-    gap:20px;
+    gap:30px;
 
 }
 
-.gallery img{
+.gallery-item{
 
-    width:100%;
+    background:rgba(255,255,255,.12);
 
-    height:320px;
-
-    object-fit:cover;
+    backdrop-filter:blur(18px);
 
     border-radius:20px;
 
-    transition:.5s;
+    overflow:hidden;
 
     cursor:pointer;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
+    transition:.4s;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.25);
 
 }
 
-.gallery img:hover{
+.gallery-item:hover{
 
-    transform:scale(1.06) rotate(2deg);
+    transform:translateY(-10px) scale(1.03);
 
 }
+
+.gallery-item img{
+
+    width:100%;
+
+    height:360px;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.5s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.08);
+
+}
+
+.gallery-item span{
+
+    display:block;
+
+    padding:18px;
+
+    font-size:18px;
+
+    font-weight:600;
+
+}
+
+
 
 /* ===========================
-   Love Letter
+   LOVE LETTER
 =========================== */
+
+#letter{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
 
 .love-letter{
 
+    width:100%;
+
     max-width:900px;
 
-    margin:auto;
-
-    background:rgba(255,255,255,.15);
-
-    padding:45px;
-
-    border-radius:25px;
+    background:rgba(255,255,255,.14);
 
     backdrop-filter:blur(20px);
+
+    padding:60px;
+
+    border-radius:30px;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.25);
 
     line-height:2;
 
     font-size:20px;
 
-    box-shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+.love-letter p{
+
+    margin-bottom:18px;
 
 }
 
+.love-letter h2{
+
+    margin-top:40px;
+
+    text-align:right;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+}
+
+
+
 /* ===========================
-   Surprise Section
+   SURPRISE
 =========================== */
 
 .surprise{
@@ -439,25 +698,75 @@ section{
 
 }
 
+.surprise h1{
+
+    font-size:60px;
+
+    font-family:'Great Vibes',cursive;
+
+}
+
+.surprise p{
+
+    margin:25px 0;
+
+    font-size:22px;
+
+}
+
+#surpriseBtn{
+
+    padding:18px 45px;
+
+    border:none;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#ff4d6d;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.4s;
+
+    font-weight:bold;
+
+}
+
+#surpriseBtn:hover{
+
+    background:#ff1744;
+
+    color:white;
+
+    transform:scale(1.05);
+
+}
+
+
+
 /* ===========================
-   Modal
+   MODAL
 =========================== */
 
 .modal{
+
+    display:none;
 
     position:fixed;
 
     inset:0;
 
-    display:none;
+    background:rgba(0,0,0,.75);
 
     justify-content:center;
 
     align-items:center;
 
-    background:rgba(0,0,0,.65);
-
-    z-index:9999;
+    z-index:99999;
 
 }
 
@@ -465,7 +774,7 @@ section{
 
     width:90%;
 
-    max-width:600px;
+    max-width:650px;
 
     background:white;
 
@@ -477,7 +786,7 @@ section{
 
     text-align:center;
 
-    animation:popup .5s;
+    animation:popup .5s ease;
 
 }
 
@@ -485,7 +794,7 @@ section{
 
     from{
 
-        transform:scale(.5);
+        transform:scale(.6);
 
         opacity:0;
 
@@ -503,56 +812,58 @@ section{
 
 .modal-content h1{
 
-    margin-bottom:20px;
-
     font-family:'Great Vibes',cursive;
 
-    font-size:55px;
+    font-size:60px;
 
 }
 
 .modal-content p{
 
-    font-size:22px;
+    margin:20px 0;
 
-    margin-bottom:30px;
+    font-size:21px;
+
+    color:#444;
 
 }
 
+#closeModal{
+
+    margin-top:20px;
+
+    padding:15px 35px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    background:#ff4d6d;
+
+    color:white;
+
+    font-size:18px;
+
+}
+
+
+
 /* ===========================
-   Music Player
+   MUSIC
 =========================== */
 
-.music-player{
+#musicBtn{
 
-    position:fixed;
-
-    right:20px;
-
-    bottom:20px;
-
-    z-index:999;
+    position:relative;
 
 }
 
-/* ===========================
-   Footer
-=========================== */
 
-footer{
-
-    padding:40px;
-
-    text-align:center;
-
-    background:rgba(0,0,0,.2);
-
-    font-size:20px;
-
-}
 
 /* ===========================
-   Fireworks Canvas
+   FIREWORKS
 =========================== */
 
 #fireworks{
@@ -561,74 +872,687 @@ footer{
 
     inset:0;
 
+    width:100%;
+
+    height:100%;
+
     pointer-events:none;
 
     z-index:9998;
 
 }
 
+
+
 /* ===========================
-   Responsive
+   FOOTER
 =========================== */
 
-@media(max-width:768px){
+footer{
 
-    nav{
+    margin-top:80px;
 
-        flex-direction:column;
-        gap:15px;
+    padding:70px 20px;
 
-    }
+    text-align:center;
 
-    nav ul{
+    background:rgba(255,255,255,.10);
 
-        flex-wrap:wrap;
-        justify-content:center;
+    backdrop-filter:blur(15px);
 
-    }
+}
 
-    .hero h1{
+.footer-content h2{
 
-        font-size:55px;
+    font-size:55px;
 
-    }
+    font-family:'Great Vibes',cursive;
 
-    .hero h2{
+}
 
-        font-size:28px;
+.footer-content p{
 
-    }
+    margin:15px 0;
 
-    .hero p{
+    font-size:20px;
 
-        font-size:18px;
+}
 
-    }
+.social-hearts{
 
-    .title{
+    font-size:30px;
 
-        font-size:42px;
+    margin:25px 0;
 
-    }
+    animation:beat 2s infinite;
 
-    #loveTimer{
+}
 
-        font-size:26px;
+@keyframes beat{
 
-    }
+    50%{
 
-    .love-letter{
-
-        font-size:18px;
-
-        padding:30px;
-
-    }
-
-    .modal-content{
-
-        padding:30px;
+        transform:scale(1.2);
 
     }
 
 }
+
+.footer-content small{
+
+    opacity:.8;
+
+}
+
+
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:992px){
+
+.hero h1{
+
+font-size:70px;
+
+}
+
+.section-title{
+
+font-size:55px;
+
+}
+
+.love-letter{
+
+padding:40px;
+
+}
+
+}
+
+
+
+@media(max-width:768px){
+
+nav{
+
+flex-direction:column;
+
+gap:15px;
+
+padding:20px;
+
+}
+
+nav ul{
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+padding-top:170px;
+
+}
+
+.hero-content{
+
+padding:35px;
+
+}
+
+.hero h1{
+
+font-size:56px;
+
+}
+
+.hero h2{
+
+font-size:32px;
+
+}
+
+.hero p{
+
+font-size:18px;
+
+}
+
+.hero-buttons{
+
+flex-direction:column;
+
+}
+
+.hero-buttons button{
+
+width:100%;
+
+}
+
+.section-title{
+
+font-size:42px;
+
+}
+
+.gallery-item img{
+
+height:260px;
+
+}
+
+.love-letter{
+
+padding:30px;
+
+font-size:18px;
+
+}
+
+.modal-content{
+
+padding:30px;
+
+}
+
+.footer-content h2{
+
+font-size:42px;
+
+}
+
+}
+
+
+
+@media(max-width:480px){
+
+.hero h1{
+
+font-size:42px;
+
+}
+
+.hero h2{
+
+font-size:26px;
+
+}
+
+.section-title{
+
+font-size:36px;
+
+}
+
+.gallery{
+
+grid-template-columns:1fr;
+
+}
+
+.story-card,
+
+.reason-card{
+
+padding:25px;
+
+}
+
+}
+/* ==========================================
+   CHRIS ❤️ FAITH (FAY)
+   STYLE.CSS - PART 3
+========================================== */
+
+
+/* ===========================
+   FLOATING HEARTS
+=========================== */
+
+.heart{
+
+    position:absolute;
+
+    color:rgba(255,255,255,.45);
+
+    user-select:none;
+
+    pointer-events:none;
+
+    animation:floatHeart linear forwards;
+
+}
+
+@keyframes floatHeart{
+
+    0%{
+
+        transform:translateY(110vh) scale(.3) rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    20%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:translateY(-120px) scale(1.5) rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* ===========================
+   FALLING PETALS
+=========================== */
+
+.petal{
+
+    position:absolute;
+
+    font-size:24px;
+
+    pointer-events:none;
+
+    animation:fallPetal linear forwards;
+
+}
+
+@keyframes fallPetal{
+
+    0%{
+
+        transform:
+        translateY(-100px)
+        translateX(0)
+        rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+        translateY(120vh)
+        translateX(150px)
+        rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* ===========================
+   TWINKLING STARS
+=========================== */
+
+.star{
+
+    position:absolute;
+
+    width:3px;
+
+    height:3px;
+
+    background:white;
+
+    border-radius:50%;
+
+    animation:twinkle 2s infinite;
+
+}
+
+@keyframes twinkle{
+
+    0%{
+
+        opacity:.2;
+
+        transform:scale(.6);
+
+    }
+
+    50%{
+
+        opacity:1;
+
+        transform:scale(2);
+
+    }
+
+    100%{
+
+        opacity:.2;
+
+        transform:scale(.6);
+
+    }
+
+}
+
+
+
+/* ===========================
+   TYPING EFFECT
+=========================== */
+
+#typing{
+
+    min-height:120px;
+
+    display:inline-block;
+
+    border-right:3px solid white;
+
+    animation:cursor .7s infinite;
+
+}
+
+@keyframes cursor{
+
+    50%{
+
+        border-color:transparent;
+
+    }
+
+}
+
+
+
+/* ===========================
+   HERO GLOW
+=========================== */
+
+.hero h1{
+
+    text-shadow:
+
+    0 0 15px rgba(255,255,255,.5),
+
+    0 0 30px rgba(255,255,255,.25);
+
+}
+
+
+
+/* ===========================
+   BUTTON SHINE
+=========================== */
+
+button{
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+button::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:0;
+
+    left:-120%;
+
+    width:100%;
+
+    height:100%;
+
+    background:
+
+    rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.8s;
+
+}
+
+button:hover::before{
+
+    left:130%;
+
+}
+
+
+
+/* ===========================
+   CARD HOVER
+=========================== */
+
+.story-card:hover,
+
+.reason-card:hover,
+
+.gallery-item:hover,
+
+.love-letter:hover{
+
+    box-shadow:
+
+    0 15px 35px rgba(255,255,255,.18),
+
+    0 0 30px rgba(255,255,255,.18);
+
+}
+
+
+
+/* ===========================
+   NAVIGATION EFFECT
+=========================== */
+
+nav a{
+
+    position:relative;
+
+}
+
+nav a::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-6px;
+
+    width:0;
+
+    height:2px;
+
+    background:white;
+
+    transition:.4s;
+
+}
+
+nav a:hover::after{
+
+    width:100%;
+
+}
+
+
+
+/* ===========================
+   GALLERY EFFECT
+=========================== */
+
+.gallery-item img{
+
+    transition:.6s;
+
+}
+
+.gallery-item:hover img{
+
+    transform:scale(1.1);
+
+}
+
+
+
+/* ===========================
+   LOGO ANIMATION
+=========================== */
+
+.logo{
+
+    animation:logoBeat 2s infinite;
+
+}
+
+@keyframes logoBeat{
+
+    50%{
+
+        transform:scale(1.08);
+
+    }
+
+}
+
+
+
+/* ===========================
+   SOCIAL HEARTS
+=========================== */
+
+.social-hearts{
+
+    letter-spacing:8px;
+
+}
+
+
+
+/* ===========================
+   LOADER
+=========================== */
+
+body.loaded #loader{
+
+    opacity:0;
+
+    visibility:hidden;
+
+}
+
+
+
+/* ===========================
+   FADE-IN ANIMATION
+=========================== */
+
+.fade{
+
+    opacity:0;
+
+    transform:translateY(70px);
+
+    transition:1s;
+
+}
+
+.fade.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+
+
+/* ===========================
+   SELECTION
+=========================== */
+
+::selection{
+
+    background:white;
+
+    color:#ff4d6d;
+
+}
+
+
+
+/* ===========================
+   SMOOTH TRANSITIONS
+=========================== */
+
+.story-card,
+
+.reason-card,
+
+.gallery-item,
+
+.hero-content,
+
+.love-letter{
+
+    transition:.4s ease;
+
+}
+
+
+
+/* ===========================
+   GLASS SHINE
+=========================== */
+
+.hero-content,
+.story-card,
+.reason-card,
+.gallery-item,
+.love-letter{
+
+    border:1px solid rgba(255,255,255,.18);
+
+}
+
+
+
+/* ===========================
+   FOOTER GLOW
+=========================== */
+
+footer{
+
+    border-top:1px solid rgba(255,255,255,.2);
+
+}
+
+
+
+/* ===========================
+   END OF STYLE.CSS
+=========================== */
