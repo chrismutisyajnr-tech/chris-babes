@@ -1,561 +1,642 @@
-/*====================================================
-        CHRIS ❤️ FAITH (FAY)
-        SCRIPT.JS - PART 1
-====================================================*/
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
 
-/*=========================================
-Loading Screen
-=========================================*/
+    <meta charset="UTF-8">
 
-window.addEventListener("load", () => {
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    const loader = document.getElementById("loader");
+    <title>Happy Girlfriend's Day ❤️ | Chris & Faith</title>
 
-    document.body.classList.add("loaded");
+    <meta name="description"
+          content="A beautiful surprise website made with love by Chris for Faith.">
 
-    setTimeout(() => {
+    <link rel="stylesheet" href="style.css">
 
-        loader.style.display = "none";
+    <!-- Google Fonts -->
 
-    },1000);
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
 
-});
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Great+Vibes&display=swap"
+          rel="stylesheet">
 
-/*=========================================
-Typewriter Effect
-=========================================*/
+    <!-- Font Awesome -->
 
-const text = `My Dearest Faith ❤️,
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-Happy Girlfriend's Day.
+</head>
 
-You are my happiness,
-my peace,
-my best friend,
-and my greatest blessing.
+<body>
 
-Thank you for loving me.
+<!-- ===================================== -->
+<!-- Loading Screen -->
+<!-- ===================================== -->
 
-Thank you for believing in me.
+<div id="loader">
 
-Thank you for choosing me.
+    <div class="loader-content">
 
-I promise to keep loving you,
-respecting you,
-supporting you,
-and making you smile every day.
+        <div class="loader-heart">
 
-You will always have my heart.
+            ❤️
 
-Forever Yours,
+        </div>
 
-Chris ❤️`;
+        <h1>
 
-const typing = document.getElementById("typing");
+            Loading Something Beautiful...
 
-let i = 0;
+        </h1>
 
-function typeWriter(){
+        <p>
 
-    if(i < text.length){
+            A special surprise for my beautiful Fay ❤️
 
-        typing.innerHTML += text.charAt(i);
+        </p>
 
-        i++;
+    </div>
 
-        setTimeout(typeWriter,40);
+</div>
 
-    }
+<!-- ===================================== -->
+<!-- Animated Background -->
+<!-- ===================================== -->
 
-}
+<div id="hearts"></div>
 
-typeWriter();
+<div id="petals"></div>
 
+<div id="stars"></div>
 
+<!-- ===================================== -->
+<!-- Navigation -->
+<!-- ===================================== -->
 
-/*=========================================
-Love Timer
-Change this date to your anniversary
-=========================================*/
+<nav>
 
-const anniversary = new Date("2025-01-01T00:00:00");
+    <div class="logo">
 
-function updateLoveTimer(){
+        ❤️ Fay
 
-    const now = new Date();
+    </div>
 
-    const difference = now - anniversary;
+    <ul>
 
-    const days = Math.floor(difference/(1000*60*60*24));
+        <li><a href="#home">Home</a></li>
 
-    const hours = Math.floor((difference/(1000*60*60))%24);
+        <li><a href="#story">Our Story</a></li>
 
-    const minutes = Math.floor((difference/(1000*60))%60);
+        <li><a href="#gallery">Gallery</a></li>
 
-    const seconds = Math.floor((difference/1000)%60);
+        <li><a href="#letter">Letter</a></li>
 
-    document.getElementById("loveTimer").innerHTML =
+        <li><a href="#reasons">Why I Love You</a></li>
 
-    `${days} Days ❤️ ${hours} Hours ❤️ ${minutes} Minutes ❤️ ${seconds} Seconds`;
+    </ul>
 
-}
+</nav>
 
-setInterval(updateLoveTimer,1000);
+<!-- ===================================== -->
+<!-- Hero -->
+<!-- ===================================== -->
 
-updateLoveTimer();
+<section id="home" class="hero">
 
+    <div class="hero-content">
 
+        <h3>
 
-/*=========================================
-Music
-=========================================*/
+            Happy Girlfriend's Day
 
-const music = document.getElementById("bgMusic");
+        </h3>
 
-const musicBtn = document.getElementById("musicBtn");
+        <h1>
 
-let playing = false;
+            My Beautiful
 
-musicBtn.onclick = function(){
+            <span>Faith ❤️</span>
 
-    if(!playing){
+        </h1>
 
-        music.play();
+        <h2>
 
-        musicBtn.innerHTML = "⏸ Pause Music";
+            My Lovely Fay
 
-        playing = true;
+        </h2>
 
-    }
+        <p id="typing"></p>
 
-    else{
+        <div class="hero-buttons">
 
-        music.pause();
+            <button id="exploreBtn">
 
-        musicBtn.innerHTML = "🎵 Play Music";
+                ❤️ Open My Heart
 
-        playing = false;
+            </button>
 
-    }
+            <button id="musicBtn">
 
-};
+                🎵 Play Music
 
+            </button>
 
+        </div>
 
-/*=========================================
-Explore Button
-=========================================*/
+    </div>
 
-document.getElementById("exploreBtn").onclick=function(){
+</section>
 
-document.getElementById("story").scrollIntoView({
+<!-- ===================================== -->
+<!-- Love Timer -->
+<!-- ===================================== -->
 
-behavior"smooth"
+<section class="love-counter">
 
-});
+    <h2>
 
-};
-/*====================================================
-        CHRIS ❤️ FAITH (FAY)
-        SCRIPT.JS - PART 2
-====================================================*/
+        Every Second With You Is My Favorite Memory ❤️
 
+    </h2>
 
-/*=========================================
-Floating Hearts
-=========================================*/
+    <div id="loveTimer">
 
-const heartsContainer = document.getElementById("hearts");
+        0 Days 0 Hours 0 Minutes
 
-function createHeart(){
+    </div>
 
-    const heart = document.createElement("div");
+</section>
 
-    heart.className = "heart";
+<!-- ===================================== -->
+<!-- Our Story -->
+<!-- ===================================== -->
 
-    heart.innerHTML = "❤️";
+<section id="story">
 
-    heart.style.left = Math.random()*100 + "%";
+    <h1 class="section-title">
 
-    heart.style.fontSize = (15 + Math.random()*30) + "px";
+        Our Beautiful Love Story ❤️
 
-    heart.style.animationDuration = (6 + Math.random()*5) + "s";
+    </h1>
 
-    heartsContainer.appendChild(heart);
+    <div class="story-container">
 
-    setTimeout(()=>{
+        <div class="story-card">
 
-        heart.remove();
+            <i class="fa-solid fa-heart"></i>
 
-    },11000);
+            <h2>
 
-}
+                The Beginning
 
-setInterval(createHeart,400);
+            </h2>
 
+            <p>
 
+                Meeting you was one of the greatest blessings in my life.
+                From that day, everything became brighter.
 
-/*=========================================
-Falling Rose Petals
-=========================================*/
+            </p>
 
-const petalsContainer = document.getElementById("petals");
+        </div>
 
-function createPetal(){
+        <div class="story-card">
 
-    const petal = document.createElement("div");
+            <i class="fa-solid fa-comments"></i>
 
-    petal.className = "petal";
+            <h2>
 
-    petal.innerHTML = "🌹";
+                Every Conversation
 
-    petal.style.left = Math.random()*100 + "%";
+            </h2>
 
-    petal.style.fontSize = (18 + Math.random()*20) + "px";
+            <p>
 
-    petal.style.animationDuration = (8 + Math.random()*5) + "s";
+                Every message from you,
+                every laugh,
+                every call,
+                has become one of my favorite memories.
 
-    petalsContainer.appendChild(petal);
+            </p>
 
-    setTimeout(()=>{
+        </div>
 
-        petal.remove();
+        <div class="story-card">
 
-    },13000);
+            <i class="fa-solid fa-earth-africa"></i>
 
-}
+            <h2>
 
-setInterval(createPetal,1200);
+                Our Forever
 
+            </h2>
 
+            <p>
 
-/*=========================================
-Twinkling Stars
-=========================================*/
+                I pray that our journey continues with more laughter,
+                more adventures,
+                and endless love.
 
-const starsContainer = document.getElementById("stars");
+            </p>
 
-for(let i=0;i<120;i++){
+        </div>
 
-    const star = document.createElement("div");
+    </div>
 
-    star.className="star";
+</section>
 
-    star.style.left=Math.random()*100+"%";
+<!-- ===================================== -->
+<!-- Why I Love You -->
+<!-- ===================================== -->
 
-    star.style.top=Math.random()*100+"%";
+<section id="reasons">
 
-    star.style.animationDelay=Math.random()*3+"s";
+    <h1 class="section-title">
 
-    starsContainer.appendChild(star);
+        Why I Love You ❤️
 
-}
+    </h1>
 
+    <div class="reason-container">
 
+        <div class="reason-card">
 
-/*=========================================
-Surprise Modal
-=========================================*/
+            <i class="fa-solid fa-face-smile"></i>
 
-const modal=document.getElementById("modal");
+            <h3>Your Beautiful Smile</h3>
 
-const surpriseBtn=document.getElementById("surpriseBtn");
+            <p>
 
-const closeModal=document.getElementById("closeModal");
+                Your smile brightens my darkest days.
 
-surpriseBtn.onclick=function(){
+            </p>
 
-    modal.style.display="flex";
+        </div>
 
-}
+        <div class="reason-card">
 
-closeModal.onclick=function(){
+            <i class="fa-solid fa-heart"></i>
 
-    modal.style.display="none";
+            <h3>Your Loving Heart</h3>
 
-}
+            <p>
 
-window.onclick=function(e){
+                Your kindness and love make me feel incredibly blessed.
 
-    if(e.target===modal){
+            </p>
 
-        modal.style.display="none";
+        </div>
 
-    }
+        <div class="reason-card">
 
-};
+            <i class="fa-solid fa-crown"></i>
 
+            <h3>You're My Queen</h3>
 
+            <p>
 
-/*=========================================
-Fade In While Scrolling
-=========================================*/
+                You deserve all the happiness and love in the world.
 
-const observer=new IntersectionObserver(entries=>{
+            </p>
 
-entries.forEach(entry=>{
+        </div>
 
-if(entry.isIntersecting){
+        <div class="reason-card">
 
-entry.target.classList.add("show");
+            <i class="fa-solid fa-star"></i>
 
-}
+            <h3>Everything About You</h3>
 
-});
+            <p>
 
-});
+                I love everything about you,
+                exactly as you are.
 
-document.querySelectorAll(
+            </p>
 
-".story-card,.reason-card,.gallery-item,.love-letter"
+        </div>
 
-).forEach(item=>{
+    </div>
 
-item.classList.add("fade");
+</section>
 
-observer.observe(item);
+<!-- ===================================== -->
+<!-- Gallery Starts Here -->
+<!-- Continue in Part 2 -->
+<!-- ===================================== -->
+    <!-- ===================================== -->
+<!-- Memory Gallery -->
+<!-- ===================================== -->
 
-});
+<section id="gallery">
 
+    <h1 class="section-title">
 
+        Our Beautiful Memories 📸
 
-/*=========================================
-Gallery Click Animation
-=========================================*/
+    </h1>
 
-document.querySelectorAll(".gallery-item img").forEach(image=>{
+    <p class="gallery-subtitle">
 
-image.addEventListener("click",()=>{
+        Every picture tells a beautiful story of us.
 
-image.style.transform="scale(1.2)";
+    </p>
 
-setTimeout(()=>{
+    <div class="gallery">
 
-image.style.transform="scale(1)";
+        <div class="gallery-item">
 
-},500);
+            <img src="images/photo1.jpg" alt="Faith and Chris">
 
-});
+            <span>❤️ Our Beautiful Smile</span>
 
-});
-/*====================================================
-        CHRIS ❤️ FAITH (FAY)
-        SCRIPT.JS - PART 3
-====================================================*/
+        </div>
 
+        <div class="gallery-item">
 
-/*=========================================
-Fireworks
-=========================================*/
+            <img src="images/photo2.jpg" alt="Faith">
 
-const canvas = document.getElementById("fireworks");
-const ctx = canvas.getContext("2d");
+            <span>🌹 My Favorite Girl</span>
 
-function resizeCanvas(){
+        </div>
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+        <div class="gallery-item">
 
-}
+            <img src="images/photo3.jpg" alt="Memory">
 
-resizeCanvas();
+            <span>💕 Endless Happiness</span>
 
-window.addEventListener("resize", resizeCanvas);
+        </div>
 
-const particles = [];
+        <div class="gallery-item">
 
-function launchFirework(){
+            <img src="images/photo4.jpg" alt="Together">
 
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * canvas.height * 0.6;
+            <span>✨ Beautiful Moments</span>
 
-    for(let i=0;i<45;i++){
+        </div>
 
-        particles.push({
+        <div class="gallery-item">
 
-            x:x,
-            y:y,
+            <img src="images/photo5.jpg" alt="Love">
 
-            radius:2 + Math.random()*2,
+            <span>💖 My Everything</span>
 
-            angle:Math.random()*Math.PI*2,
+        </div>
 
-            speed:2 + Math.random()*4,
+        <div class="gallery-item">
 
-            alpha:1,
+            <img src="images/photo6.jpg" alt="Forever">
 
-            color:`hsl(${Math.random()*360},100%,70%)`
+            <span>🌍 Forever Starts With You</span>
 
-        });
+        </div>
 
-    }
+    </div>
 
-}
+</section>
 
-function animateFireworks(){
+<!-- ===================================== -->
+<!-- Love Letter -->
+<!-- ===================================== -->
 
-    ctx.clearRect(0,0,canvas.width,canvas.height);
+<section id="letter">
 
-    particles.forEach((particle,index)=>{
+    <h1 class="section-title">
 
-        particle.x += Math.cos(particle.angle)*particle.speed;
+        A Letter To My Beautiful Fay 💌
 
-        particle.y += Math.sin(particle.angle)*particle.speed;
+    </h1>
 
-        particle.alpha -= 0.015;
+    <div class="love-letter">
 
-        ctx.beginPath();
+        <p>My Dearest Faith, ❤️</p>
 
-        ctx.arc(
+        <p>
 
-            particle.x,
+            Happy Girlfriend's Day, my beautiful Fay.
 
-            particle.y,
+            Today is another reminder of how incredibly lucky I am to have you
+            in my life.
 
-            particle.radius,
+        </p>
 
-            0,
+        <p>
 
-            Math.PI*2
+            Thank you for every smile you have given me,
+            every conversation we have shared,
+            every laugh,
+            every prayer,
+            and every moment you've made my heart feel at home.
 
-        );
+        </p>
 
-        ctx.fillStyle = particle.color.replace("hsl","hsla").replace(")",`,`+particle.alpha+")");
+        <p>
 
-        ctx.fill();
+            Loving you has become the easiest and most beautiful thing
+            I've ever done.
 
-        if(particle.alpha <= 0){
+        </p>
 
-            particles.splice(index,1);
+        <p>
 
-        }
+            You inspire me to become a better man every day.
 
-    });
+            Your kindness,
+            your beautiful heart,
+            your laughter,
+            and your love make my world complete.
 
-    requestAnimationFrame(animateFireworks);
+        </p>
 
-}
+        <p>
 
-animateFireworks();
+            I promise to always respect you,
+            support you,
+            protect you,
+            pray for you,
+            and love you with all my heart.
 
-setInterval(launchFirework,2500);
+        </p>
 
+        <p>
 
+            Whether life brings sunshine or storms,
 
-/*=========================================
-Heart Burst
-=========================================*/
+            I will always choose you.
 
-function heartBurst(){
+        </p>
 
-    for(let i=0;i<20;i++){
+        <p>
 
-        const heart=document.createElement("div");
+            Thank you for being my happiness.
 
-        heart.innerHTML="❤️";
+            Thank you for being my peace.
 
-        heart.style.position="fixed";
+            Thank you for being my beautiful Fay.
 
-        heart.style.left=(45+Math.random()*10)+"%";
+        </p>
 
-        heart.style.top=(45+Math.random()*10)+"%";
+        <h2>
 
-        heart.style.fontSize=(20+Math.random()*25)+"px";
+            Forever Yours,
 
-        heart.style.pointerEvents="none";
+            Chris ❤️
 
-        heart.style.zIndex="100000";
+        </h2>
 
-        heart.style.transition="all 2s ease";
+    </div>
 
-        document.body.appendChild(heart);
+</section>
 
-        setTimeout(()=>{
+<!-- ===================================== -->
+<!-- Surprise -->
+<!-- ===================================== -->
 
-            heart.style.transform=
-            `translate(${(Math.random()-0.5)*400}px,
-            ${-200-Math.random()*300}px)
-            scale(0.5)`;
+<section class="surprise">
 
-            heart.style.opacity="0";
+    <h1>
 
-        },20);
+        One Last Surprise ❤️
 
-        setTimeout(()=>{
+    </h1>
 
-            heart.remove();
+    <p>
 
-        },2200);
+        Click the button below...
 
-    }
+    </p>
 
-}
+    <button id="surpriseBtn">
 
+        🎁 Open My Heart
 
+    </button>
 
-/*=========================================
-Open Modal Fireworks
-=========================================*/
+</section>
 
-surpriseBtn.addEventListener("click",()=>{
+<!-- ===================================== -->
+<!-- Surprise Modal -->
+<!-- ===================================== -->
 
-    launchFirework();
+<div class="modal" id="modal">
 
-    launchFirework();
+    <div class="modal-content">
 
-    launchFirework();
+        <h1>
 
-    heartBurst();
+            I Love You, Fay ❤️
 
-});
+        </h1>
 
+        <p>
 
+            Faith,
 
-/*=========================================
-Smooth Button Click Animation
-=========================================*/
+            you are my greatest blessing,
 
-document.querySelectorAll("button").forEach(button=>{
+            my answered prayer,
 
-    button.addEventListener("click",()=>{
+            my best friend,
 
-        button.style.transform="scale(.95)";
+            and the love of my life.
 
-        setTimeout(()=>{
+        </p>
 
-            button.style.transform="";
+        <p>
 
-        },120);
+            Every heartbeat reminds me how much I love you.
 
-    });
+        </p>
 
-});
+        <p>
 
+            Happy Girlfriend's Day,
 
+            My Beautiful Fay ❤️
 
-/*=========================================
-Welcome Message
-=========================================*/
+        </p>
 
-setTimeout(()=>{
+        <button id="closeModal">
 
-    console.log(
+            Close ❤️
 
-`❤️
-Welcome Faith!
+        </button>
 
-This website was lovingly created by Chris.
+    </div>
 
-Happy Girlfriend's Day!
+</div>
 
-❤️`);
+<!-- ===================================== -->
+<!-- Background Music -->
+<!-- ===================================== -->
 
-},1500);
+<audio id="bgMusic" loop>
 
+    <source src="music/love.mp3" type="audio/mpeg">
 
+</audio>
 
-/*=========================================
-End of Script
-=========================================*/
+<!-- ===================================== -->
+<!-- Fireworks Canvas -->
+<!-- ===================================== -->
+
+<canvas id="fireworks"></canvas>
+
+<!-- ===================================== -->
+<!-- Footer -->
+<!-- ===================================== -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <h2>
+
+            Chris ❤️ Faith
+
+        </h2>
+
+        <p>
+
+            "You are my favorite hello and my hardest goodbye."
+
+        </p>
+
+        <p>
+
+            Happy Girlfriend's Day, My Beautiful Fay 🌹
+
+        </p>
+
+        <div class="social-hearts">
+
+            ❤️ 🤍 ❤️ 🤍 ❤️
+
+        </div>
+
+        <small>
+
+            Made with endless love by Chris, especially for Faith ❤️ © 2026
+
+        </small>
+
+    </div>
+
+</footer>
+
+<!-- ===================================== -->
+<!-- JavaScript -->
+<!-- ===================================== -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
